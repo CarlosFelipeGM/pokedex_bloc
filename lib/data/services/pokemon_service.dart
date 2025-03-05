@@ -10,4 +10,9 @@ class PokemonService {
         .get('pokemon', queryParameters: {'offset': offset, 'limit': limit});
     return response.data;
   }
+
+  Future<Map<String, dynamic>> detailPokemon(String name) async {
+    final response = await _dio.get("pokemon/$name");
+    return response.data;
+  }
 }

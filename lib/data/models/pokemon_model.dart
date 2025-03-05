@@ -6,11 +6,12 @@ class PokemonModel {
   final String id;
   final String image;
 
-  PokemonModel(
-      {required this.name,
-      required this.url,
-      required this.id,
-      required this.image});
+  PokemonModel({
+    required this.name,
+    required this.url,
+    required this.id,
+    required this.image,
+  });
 
   factory PokemonModel.fromJson(Map<String, dynamic> json) {
     var id = _getIdFromUrl(json['url']);
