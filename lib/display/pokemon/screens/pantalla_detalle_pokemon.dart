@@ -10,7 +10,7 @@ class PantallaDetallePokemon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(pokemon.name),
+        title: Text(pokemon.name.toUpperCase()),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Center(
@@ -22,6 +22,9 @@ class PantallaDetallePokemon extends StatelessWidget {
               height: 200,
               fit: BoxFit.cover,
             ),
+            Text(pokemon.name),
+            Text(pokemon.id),
+            Text(pokemon.url),
           ],
         ),
       ),

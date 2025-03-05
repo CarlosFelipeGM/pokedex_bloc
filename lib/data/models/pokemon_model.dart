@@ -3,16 +3,23 @@ import 'dart:convert';
 class PokemonModel {
   final String name;
   final String url;
+  final String id;
   final String image;
 
-  PokemonModel({required this.name, required this.url, required this.image});
+  PokemonModel(
+      {required this.name,
+      required this.url,
+      required this.id,
+      required this.image});
 
   factory PokemonModel.fromJson(Map<String, dynamic> json) {
+    var id = _getIdFromUrl(json['url']);
     return PokemonModel(
       name: json['name'],
       url: json['url'],
+      id: id,
       image:
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${_getIdFromUrl(json['url'])}.png",
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png",
     );
   }
 
