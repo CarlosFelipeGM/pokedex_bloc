@@ -9,10 +9,10 @@ class PokemonTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      // leading: Image.network(pokemon.image),
+      leading: Image.network(pokemon.image),
       title: Text(pokemon.name.toUpperCase()),
       subtitle: Text(pokemon.url),
-      // trailing: const Icon(Icons.arrow_forward),
+      trailing: const Icon(Icons.arrow_forward),
     );
   }
 }
